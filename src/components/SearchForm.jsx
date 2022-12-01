@@ -9,12 +9,12 @@ export function SearchForm({ onSearchSubmit }) {
 		setQuery(evt.target.value);
 	}
 
-	function handleFormSubmit() {
+	function handleButton() {
 		onSearchSubmit(query);
 	}
 
 	return (
-		<form className="Form" role="search" onSubmit={handleFormSubmit}>
+		<form className="Form" role="search">
 			<label className="label" htmlFor="search-field">
 				Search for some art
 			</label>
@@ -27,7 +27,7 @@ export function SearchForm({ onSearchSubmit }) {
 				value={query}
 				onChange={handleInputChange}
 			/>
-			<button className="button" type="submit">
+			<button className="button" type="button" onClick={handleButton}>
 				Search
 			</button>
 		</form>
