@@ -35,14 +35,14 @@ export function App() {
 				<>
 					Results:
 					<ol>
-						{results.map(({ id, title, artist_title }) => {
+						{results.map(({ image_id, title, artist_title }) => {
 							return (
-								<li>
+								<li key={image_id}>
 									Title: {title}
 									<br />
 									Artist: {artist_title}
 									<br />
-									<a href={`#${id}`}>details</a>
+									<a href={`#${image_id}`}>details</a>
 								</li>
 							);
 						})}
