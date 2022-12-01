@@ -1,3 +1,7 @@
 export function ImageDetailsPane() {
-	return <p>Test</p>;
+	return (
+		<section>
+			<a href="/">Back</a>
+		</section>
+	);
 }
