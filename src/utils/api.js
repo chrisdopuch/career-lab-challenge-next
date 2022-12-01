@@ -31,9 +31,12 @@ export function searchArtworks(query) {
 	 * Get data from `ARTWORKS_SEARCH_RESULT.json`, whuch is served by our
 	 * local server.
 	 */
-	const requestUrl = `${
-		import.meta.env.VITE_API_URL
-	}/api/v1/artworks/search?q=${query}&query[term][is_public_domain]=true&fields=artist_title,date_display,id,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`;
+	const requestUrl =
+		import.meta.env.MODE === 'production'
+			? `${
+					import.meta.env.VITE_API_URL
+			  }/api/v1/artworks/search?q=${query}&query[term][is_public_domain]=true&fields=artist_title,date_display,id,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`
+			: `./ARTWORKS_SEARCH_RESULT.json`;
 
 	/**
 	 * We know the API serves JSON data, but
