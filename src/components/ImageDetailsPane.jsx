@@ -1,4 +1,4 @@
-export function ImageDetailsPane({ id, title }) {
+export function ImageDetailsPane() {
 	const { hash } = window.location;
 	const [_hash, ...imageIdParts] = hash;
 	const imageId = imageIdParts.join('');
@@ -7,7 +7,7 @@ export function ImageDetailsPane({ id, title }) {
 			<a href="/">Back</a>
 			<br />
 			<img
-				alt={title}
+				alt={''}
 				src={`${
 					import.meta.env.VITE_IMG_URL
 				}/iiif/2/${imageId}/full/843,/0/default.jpg`}
